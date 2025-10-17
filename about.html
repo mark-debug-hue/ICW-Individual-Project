@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Macmaron's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body class="body-about">
+    <header class="header">
+        <a href="#" class="logo">Macmaron</a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="about">
+        <div class="about-content">
+            <h1>About Me</h1>
+            <h3>Frontend Developer</h3>
+            
+            <div class="about-main">
+                <div class="about-col-1">
+                    <img src="images/my pro pic.jpg" alt="Mark Kaggwa">
+                </div>
+                
+                <div class="about-col-2">
+                    <p class="about-description">
+                        I'm a passionate frontend developer with five years of experience creating 
+                        engaging and user-friendly web experiences. I specialize in turning complex 
+                        problems into simple, beautiful designs.
+                    </p>
+                    
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" data-tab="skills">Skills</p>
+                        <p class="tab-links" data-tab="experience">Experience</p>
+                        <p class="tab-links" data-tab="education">Education</p>
+                    </div>
+                    
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                            <li><span>Web Development</span><br>Web App Development</li>
+                            <li><span>App Development</span><br>Building Android/iOS Apps</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2021 - Current</span><br>Frontend Developer at TechCorp</li>
+                            <li><span>2019 - 2021</span><br>UI/UX Designer at Creative Studio</li>
+                            <li><span>2017 - 2019</span><br>Junior Developer at WebSolutions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2024-current</span><br>Bachelor's Degree in Business Computing at MUBS</li>
+                            <li><span>2022</span><br>Advanced Level at Makerere College</li>
+                            <li><span>2017</span><br>Ordinary level at St Marks College</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-stats">
+                <div class="stat-item">
+                    <h3>5+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>250+</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <footer class="home-footer">
+        <p>&copy; 2025 Macmaron. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        // Tab functionality
+        const tabLinks = document.querySelectorAll('.tab-links');
+        const tabContents = document.querySelectorAll('.tab-contents');
+        
+        tabLinks.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabLinks.forEach(t => t.classList.remove('active-link'));
+                tabContents.forEach(c => c.classList.remove('active-tab'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active-link');
+                document.getElementById(tab.dataset.tab).classList.add('active-tab');
+            });
+        });
+    </script>
+<!-- script for mobile menu functionality -->
+<script>
+const menuToggle = document.createElement('div');
+menuToggle.className = 'menu-toggle';
+menuToggle.innerHTML = `
+    <span></span>
+    <span></span>
+    <span></span>
+`;
+
+const header = document.querySelector('.header');
+header.appendChild(menuToggle);
+
+const navbar = document.querySelector('.navbar');
+
+menuToggle.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navbar.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+const navLinks = document.querySelectorAll('.navbar a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navbar.classList.remove('active');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navbar.classList.remove('active');
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Macmaron's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+<body class="body-services">
+    <header class="header">
+        <a href="#" class="logo">Macmaron</a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="services">
+        <div class="services-content">
+            <h1>My Services</h1>
+            <h3>What I Do</h3>
+            <p class="services-intro">I offer comprehensive web development and design services to bring your digital ideas to life with cutting-edge technology and creative solutions.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bx-code-alt'></i>
+                    </div>
+                    <h2 class="service-title">Frontend Development</h2>
+                    <p class="service-description">Building the user-facing parts of a website or application and also focusing on how it looks and how users interacts with it</p>
+                    <div class="service-features">
+                        <span><i class='bx bx-check'></i> Responsive Design</span>
+                        <span><i class='bx bx-check'></i> Modern Frameworks</span>
+                        <span><i class='bx bx-check'></i> Performance Optimization</span>
+                    </div>
+                    <a href="contact.html" class="service-link">Get Started <i class='bx bx-arrow-right'></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bx-palette'></i>
+                    </div>
+                    <h2 class="service-title">UI/UX Design</h2>
+                    <p class="service-description">Creating the overall experience and visual appearance for websites and applications</p>
+                    <div class="service-features">
+                        <span><i class='bx bx-check'></i> User Research</span>
+                        <span><i class='bx bx-check'></i> Wireframing</span>
+                        <span><i class='bx bx-check'></i> Prototyping</span>
+                    </div>
+                    <a href="contact.html" class="service-link">Get Started <i class='bx bx-arrow-right'></i></a>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class='bx bx-layout'></i>
+                    </div>
+                    <h2 class="service-title">Web Design</h2>
+                    <p class="service-description">Planning, conceptualizing, and creating the visual and functional aspects of websites</p>
+                    <div class="service-features">
+                        <span><i class='bx bx-check'></i> Custom Designs</span>
+                        <span><i class='bx bx-check'></i> Brand Consistency</span>
+                        <span><i class='bx bx-check'></i> SEO Friendly</span>
+                    </div>
+                    <a href="contact.html" class="service-link">Get Started <i class='bx bx-arrow-right'></i></a>
+                </div>
+            </div>
+
+            <div class="services-cta">
+                <h3>Ready to Start Your Project?</h3>
+                <p>Let's work together to bring your ideas to life with professional web solutions.</p>
+                <div class="btn-box">
+                    <a href="contact.html" class="cta-btn">Start Project <i class='bx bx-rocket'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="home-footer">
+        <p>&copy; 2025 Macmaron. All rights reserved.</p>
+    </footer>
+<!-- script for mobile menu functionality -->
+<script>
+const menuToggle = document.createElement('div');
+menuToggle.className = 'menu-toggle';
+menuToggle.innerHTML = `
+    <span></span>
+    <span></span>
+    <span></span>
+`;
+
+const header = document.querySelector('.header');
+header.appendChild(menuToggle);
+
+const navbar = document.querySelector('.navbar');
+
+menuToggle.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navbar.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+const navLinks = document.querySelectorAll('.navbar a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navbar.classList.remove('active');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navbar.classList.remove('active');
+    }
+});
+</script>
+
+</body>
+</html>

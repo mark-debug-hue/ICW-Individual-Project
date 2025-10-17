@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Macmaron's Portfolio</title>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel=" stylesheet">
+</head>
+<body>
+ <header class="header">
+  <a href="#" class="logo">Macmaron</a>
+  <nav class="navbar">
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+  </nav>
+ </header>
+ <!-- home  -->
+
+ <section class="home">
+  <div class="home-content">
+   <h1>Hi, I'm Mark Kaggwa</h1>
+   <h3>Frontend Developer</h3>
+   <p>I'm a front end developer with five years of experience in web development. I've worked on a variety of projects for clients in the retail, travel, and healthcare industries. I'm passionate about creating great user experiences and have a strong understanding of usability and accessibility standards.</p>
+   <div class="btn-box">
+    <a href="contact.html">Hire Me</a>
+    <a href="https://wa.me/256740146094">Let's talk</a>
+   </div>
+  </div>
+  <div class="home-sci">
+      <a href="https://www.instagram.com/mac_maron_?igsh=d2ZsZ3A1bGt5aWl5&utm_source=qr"><i class='bx bxl-instagram'></i></a>
+   <a href="https://wa.me/256740146094"><i class='bx bxl-whatsapp'></i></a>
+   <a href="https://x.com/whyug256?s=21"><i class='bx bxl-twitter'></i></a>
+  </div>
+ </section>
+
+ <footer class="home-footer">
+        <p>&copy; 2025 Macmaron. All rights reserved.</p>
+    </footer>
+
+
+<!-- script for mobile menu functionality -->
+<script>
+const menuToggle = document.createElement('div');
+menuToggle.className = 'menu-toggle';
+menuToggle.innerHTML = `
+    <span></span>
+    <span></span>
+    <span></span>
+`;
+
+const header = document.querySelector('.header');
+header.appendChild(menuToggle);
+
+const navbar = document.querySelector('.navbar');
+
+menuToggle.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navbar.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+const navLinks = document.querySelectorAll('.navbar a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navbar.classList.remove('active');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navbar.classList.remove('active');
+    }
+});
+</script>
+
+
+
+</body>
+</html>
